@@ -6,7 +6,7 @@ This project demonstrates user lifecycle management in a Linux enterprise enviro
 
 ## Objective
 
-Create a user named `yousuf` on **App Server 3** with an expiration date of **February 17, 2027**, ensuring adherence to naming standards (lowercase only).
+Create a user named `siva` on **App Server 2** with an expiration date of **February 17, 2027**, ensuring adherence to naming standards (lowercase only).
 
 ---
 
@@ -34,33 +34,35 @@ Create a user named `yousuf` on **App Server 3** with an expiration date of **Fe
 
 ## Implementation Steps
 
-### Step 1: Connect to App Server 3
+### Step 1: Connect to App Server 2
 
 ```bash
-ssh user@app-server-3
+ssh user@app-server-2
 ```
 
 ### Step 2: Create user with expiration date
 
 ```bash
-sudo useradd -e 2027-02-17 yousuf
+sudo useradd -e 2027-02-17 siva
 ```
 
 ### Step 3: Verify expiration settings
 
 ```bash
-sudo chage -l yousuf
+sudo chage -l siva
 ```
 
 ---
 
 ## Screenshots
 
-| # | Description |
-|---|-------------|
-| 1 | Successful user creation |
-| 2 | `chage -l yousuf` output |
-| 3 | `/etc/shadow` verification |
+### chage -l siva — Account expiration verification
+
+![chage verification](screenshots/chage-verification.png)
+
+### grep siva /etc/shadow — Shadow file validation
+
+![shadow verification](screenshots/shadow-verification.png)
 
 ---
 
